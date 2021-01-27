@@ -5,6 +5,6 @@ import { BookmarksState } from './bookmarks.reducer';
 export const selectBookmarksState = createFeatureSelector('bookmarks');
 
 export const selectBookmarksList = createSelector(
-  selectBookmarksState,
-  (bookmarksState: BookmarksState) => bookmarksState.list,
-);
+    selectBookmarksState,
+    (bookmarkState: BookmarksState) => bookmarkState.list,
+)

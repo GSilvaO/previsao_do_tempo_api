@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 
-import { Store, select } from '@ngrx/store';
+import { Store, select} from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { AppState } from 'src/app/shared/state/app.reducer';
+import { AppState } from '../../../../shared/state/app.reducer';
 import { CityDailyWeather } from 'src/app/shared/models/weather.model';
 import { Units } from 'src/app/shared/models/units.enum';
 import * as fromDetailsActions from '../../state/details.actions';
 import * as fromDetailsSelectors from '../../state/details.selectors';
 import * as fromConfigSelectors from '../../../../shared/state/config/config.selectors';
+
 
 @Component({
   selector: 'jv-details',
@@ -23,10 +24,9 @@ export class DetailsPage implements OnInit {
 
   unit$: Observable<Units>;
 
-  constructor(private store: Store<AppState>) {
-  }
+  constructor(private store: Store<AppState>) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.dispatch(fromDetailsActions.loadWeatherDetails());
 
     this.details$ = this.store.pipe(select(fromDetailsSelectors.selectDetailsEntity));
@@ -35,4 +35,5 @@ export class DetailsPage implements OnInit {
 
     this.unit$ = this.store.pipe(select(fromConfigSelectors.selectUnitConfig));
   }
+
 }

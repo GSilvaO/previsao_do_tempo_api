@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 
-import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { TypeaheadModule } from "ngx-bootstrap/typeahead";
 
 import { LoaderComponent } from './loader/loader.component';
 import { DetailedWeatherComponent } from './detailed-weather/detailed-weather.component';
@@ -12,7 +12,7 @@ import { CitiesTypeaheadComponent } from './cities-typeahead/cities-typeahead.co
   imports: [
     CommonModule,
     FormsModule,
-    TypeaheadModule.forRoot(),
+    TypeaheadModule.forRoot()
   ],
   declarations: [
     LoaderComponent,
@@ -22,7 +22,7 @@ import { CitiesTypeaheadComponent } from './cities-typeahead/cities-typeahead.co
   exports: [
     LoaderComponent,
     DetailedWeatherComponent,
-    CitiesTypeaheadComponent,
+    CitiesTypeaheadComponent
   ]
 })
 export class ComponentsModule {
